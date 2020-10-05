@@ -48,7 +48,7 @@ class Form {
       player.index = playerCount;
       player.update();
       player.updateCount(playerCount);
-      this.greeting.html("Oh no! " + player.name + " there is a new virus and only you can find a vaccine for it!" + "You must Save The World!")
+      this.greeting.html("Oh no! " + player.name + " there is a new virus and only you can find a vaccine for it!" + " You must Save The World!")
       this.greeting.position(displayWidth/2 - 465, 300);
     });
 

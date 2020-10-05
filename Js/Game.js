@@ -45,24 +45,46 @@ class Game {
       background(lab1,1075,500);
 
       textSize(30)
-      fill("black")
+      fill("yellow")
       text("Trial 1: Collect the " + vi.name + " virus but avoid the other microbes!",100,90);
       text("Cases: " + cases, 800, 150);
+      text("Score: " + score, 800, 180);
 
-      dish = createSprite(537.5,400,50,50);
+      //dish = createSprite(537.5,400,50,50);
+
+      dish.visible = true;
+
       dish.x = mouseX;
       //dish.y = mouseY;
       dish.shapeColor = "blue";
       
 
       if(frameCount%30 === 0){
-        theVi = createSprite(20,0,)
+        theVi = createSprite(random(20,1055),0,20,20);
+        theVi.velocityY = 5;
+
+        theVi.shapeColor = "purple";
+
+        viGroup.add(theVi);
       }
 
-      drawSprites();
+      if(vi.name !== null){
+
+      for(var i = 0; i<viGroup.length; i++){
+        if(viGroup.get(i).isTouching(dish)){
+          viGroup.get(i).destroy();
+
+          score++
+        }
+      }
+
+      //if(viGroup.isTouching(dish)){
+        //score++;
+
+        //viGroup.destroyEach();
+      //}
     }
-    
-    getCases(){
-      return cases;
+
+      drawSprites();
     }
   }

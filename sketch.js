@@ -5,6 +5,8 @@ var playerCount, virCount;
 
 var cases;
 
+var score = 0;
+
 var stock = 0;
 var database;
 
@@ -13,6 +15,8 @@ var lab1, lab2, lab3;
 var dish;
 
 var theVi;
+
+var viGroup;
 
 var form, player, game, vi;
 
@@ -26,6 +30,11 @@ function setup(){
   game = new Game();
   game.getState();
   game.start();
+
+  dish = createSprite(537.5,400,50,50);
+  dish.visible = false;
+
+  viGroup = new Group;
 }
 
 
